@@ -27,9 +27,9 @@ public class GentlemanPlugin extends PluginBase {
 		this.saveResource("dictionary.yml", false);
 		this.saveResource("badwords.json", false);
 
-		this.messages = new Config(this.getDataFolder().getAbsolutePath() + "messages.yml", Config.YAML);
-		this.dictionary = new Config(this.getDataFolder().getAbsolutePath() + "dictionary.yml", Config.YAML);
-		this.badwords = new Config(this.getDataFolder().getAbsolutePath() + "badwords.yml", Config.JSON);
+		this.messages = new Config(this.getDataFolder().getAbsolutePath() + "/messages.yml", Config.YAML);
+		this.dictionary = new Config(this.getDataFolder().getAbsolutePath() + "/dictionary.yml", Config.YAML);
+		this.badwords = new Config(this.getDataFolder().getAbsolutePath() + "/badwords.json", Config.JSON);
 
 		this.makeQueue();
 		this.needToCheckCommand("tell");
@@ -44,8 +44,13 @@ public class GentlemanPlugin extends PluginBase {
 
 	public ArrayList<String> cutWords(String str) {
 		ArrayList<String> list = new ArrayList<String>();
-		for (int ch = 0; ch < str.length(); ch++)
-			list.add(String.valueOf(str.charAt(ch)));
+
+		final int length = str.length();
+		for (int offset = 0; offset < length;) {
+			final int codepoint = str.codePointAt(offset);
+			list.add(String.valueOf((char) codepoint));
+			offset += Character.charCount(codepoint);
+		}
 		return list;
 	}
 
@@ -83,7 +88,7 @@ public class GentlemanPlugin extends PluginBase {
 	 * @param commandName
 	 */
 	public void needToCheckCommand(String commandName) {
-		this.needCheckCommand.add(commandName);
+		this.needCheckCommand.add("/" + commandName);
 	}
 
 	/**

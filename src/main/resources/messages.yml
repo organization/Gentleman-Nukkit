@@ -11,6 +11,8 @@ ko-some-badwords-found: "[ 서버 ] 특정 비속어가 감지되었습니다 !"
 ko-badwords-nickname: "부적절 단어 포함의심 ! 닉네임을 변경해주세요 !"
 ko-be-careful-about-badwords: "[ 서버 ] 유사 비속어 필터에 주의해주세요 (상당히 민감 !)"
 ko-doubt: "의심"
+ko-chatty-on: "[ 서버 ] 서버내 대화량이 많아 근거리대화가 적용됩니다."
+ko-chatty-off: "[ 서버 ] 서버내 대화량이 적어 원거리대화가 적용됩니다."
 
 #(ES) ESPAÑOL
 es-some-badwords-found: "[ Servidor ] Tu Mensage Contiene Malas Palabras!"

@@ -17,11 +17,11 @@ public class GentlemanAsyncTask extends AsyncTask {
 	private int eventType;
 	private boolean needDictionaryCheck = false;
 
-	private String name = null;
-	private String format = null;
-	private String message = null;
-	private String find = null;
-	private String blockData = null;
+	private String name = "";
+	private String format = "";
+	private String message = "";
+	private String find = "";
+	private String posData = "";
 
 	public GentlemanAsyncTask(int eventType) {
 		this.eventType = eventType;
@@ -47,8 +47,8 @@ public class GentlemanAsyncTask extends AsyncTask {
 		return this;
 	}
 
-	public GentlemanAsyncTask setBlockData(int x, int y, int z, int id, int dmg) {
-		this.blockData = x + ":" + y + ":" + z + ":" + id + ":" + dmg;
+	public GentlemanAsyncTask setPosData(int x, int y, int z, int id, int dmg) {
+		this.posData = x + ":" + y + ":" + z + ":" + id + ":" + dmg;
 		return this;
 	}
 
@@ -73,8 +73,13 @@ public class GentlemanAsyncTask extends AsyncTask {
 
 	public ArrayList<String> cutWords(String str) {
 		ArrayList<String> list = new ArrayList<String>();
-		for (int ch = 0; ch < str.length(); ch++)
-			list.add(String.valueOf(str.charAt(ch)));
+
+		final int length = str.length();
+		for (int offset = 0; offset < length;) {
+			final int codepoint = str.codePointAt(offset);
+			list.add(String.valueOf((char) codepoint));
+			offset += Character.charCount(codepoint);
+		}
 		return list;
 	}
 
@@ -90,14 +95,14 @@ public class GentlemanAsyncTask extends AsyncTask {
 			LinkedHashMap<String, Boolean> findCount = new LinkedHashMap<String, Boolean>();
 
 			for (String match_alpha : queue) {
-
+				
 				for (int ch = 0; ch < words.size(); ch++) {
-					String used_alpha = String.valueOf(words.get(ch));
+					String used_alpha = words.get(ch);
 
 					match_alpha = match_alpha.toLowerCase();
 					used_alpha = used_alpha.toLowerCase();
 
-					if (match_alpha.equals(used_alpha)) {
+					if (match_alpha.equals(used_alpha)){
 						findCount.put(match_alpha, true);
 						break;
 					}
@@ -110,7 +115,7 @@ public class GentlemanAsyncTask extends AsyncTask {
 				}
 			}
 		}
-		return null;
+		return "";
 	}
 
 	public String removeDictionaryText(String text) {
@@ -121,6 +126,6 @@ public class GentlemanAsyncTask extends AsyncTask {
 
 	@Override
 	public void onCompletion(Server server) {
-		EventListener.getInstance().callback(eventType, name, find, message, format, blockData);
+		EventListener.getInstance().callback(eventType, name, find, message, format, posData);
 	}
 }
