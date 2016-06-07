@@ -1,5 +1,5 @@
-name: "IDEA"
-main: "organization.idea.IDEAPlugin"
+name: "Gentleman"
 version: "1.0.0"
 author: "Organization"
+main: "organization.gentleman.GentlemanPlugin"
 api: ["1.0.0"]

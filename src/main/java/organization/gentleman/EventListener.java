@@ -87,7 +87,7 @@ public class EventListener implements Listener {
 	public void onSignChangeEvent(SignChangeEvent event) {
 		if (event.getPlayer().isOp())
 			return;
-
+		
 		String message = "";
 		for (String line : event.getLines())
 			message += line + "\n";
@@ -140,9 +140,6 @@ public class EventListener implements Listener {
 
 	@EventHandler
 	public void onDataPacketReceiveEvent(DataPacketReceiveEvent event) {
-		if (event.getPlayer().isOp())
-			return;
-		
 		switch (event.getPacket().pid()) {
 		case ProtocolInfo.TEXT_PACKET:
 			TextPacket textPacket = (TextPacket) event.getPacket();

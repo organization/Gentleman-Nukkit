@@ -6,47 +6,19 @@ default-language: ko
 m_version: 1
 
 #(EN) ENGLISH
-en-default-prefix: "[ Server ]"
-
-en-idea: "idea"
-en-synchro: "synchro"
-en-shift: "shift"
-en-cancel: "cancel"
-
-en-idea-permission-desc: "IDEA Permission"
-en-idea-command-desc: "Chunk real-time backup&restore"
-en-all-queue-cancelled: "ALL QUEUE IS CANCELLED"
-en-synchro-sequence-start: "START IDEA SYNCHRO SEQUENCE"
-en-shift-sequence-start: "START IDEA SHIFT SEQUENCE"
-en-please-make-dicision: "TOUCH THE DESIRED POSITION (OR /IDEA CANCEL)"
-en-idea-doesnt-exist: "IDEA DOESN'T EXIST! SYNCHRONIZE FAILED!"
-en-idea-is-breakdown: "IDEA CHUNK IS BREAKDOWN, SYNCHRONIZE FAILED!"
-en-idea-instance-synchro-100: "IDEA = INSTANCE 100% SYNCHRONIZED"
-
-en-help-synchro: "/IDEA SYNCHRO - CHANGE THIS CHUNK TO IDEA"
-en-help-shift: "/IDEA SHIFT - CHANGE IDEA TO THIS CHUNK"
-en-help-cancel: "/IDEA CANCEL - ALL QUEUE CANCEL"
-
 #(KO) KOREAN
-ko-default-prefix: "[ 서버 ]"
+ko-some-badwords-found: "[ 서버 ] 특정 비속어가 감지되었습니다 !"
+ko-badwords-nickname: "부적절 단어 포함의심 ! 닉네임을 변경해주세요 !"
+ko-be-careful-about-badwords: "[ 서버 ] 유사 비속어 필터에 주의해주세요 (상당히 민감 !)"
+ko-doubt: "의심"
+ko-chatty-on: "[ 서버 ] 서버내 대화량이 많아 근거리대화가 적용됩니다."
+ko-chatty-off: "[ 서버 ] 서버내 대화량이 적어 원거리대화가 적용됩니다."
 
-ko-idea: "이데아"
-ko-synchro: "동조"
-ko-shift: "교체"
-ko-cancel: "중단"
-
-ko-idea-permission-desc: "IDEA 퍼미션"
-ko-idea-command-desc: "청크 실시간 백업&복원 명령어"
-ko-all-queue-cancelled: "모든 큐가 취소되었습니다"
-ko-synchro-sequence-start: "이데아 청크 동조를 시작합니다"
-ko-shift-sequence-start: "이데아 청크 교체를 시작합니다"
-ko-please-make-dicision: "원하는 위치를 터치하거나 '/이데아 중단'으로 중단가능"
-ko-idea-doesnt-exist: "이데아가 존재하지 않습니다 ! 동조실패 !"
-ko-idea-is-breakdown: "이데아청크가 불러와지지 않습니다 ! 동조실패 !"
-ko-idea-instance-synchro-100: "이데아와 인스턴스가 100% 동조 되었습니다 !"
-
-ko-help-synchro: "/이데아 동조 - 해당 청크를 이데아 청크화"
-ko-help-shift: "/이데아 교체 - 이데아청크를 해당 청크로 교체"
-ko-help-cancel: "/이데아 중단 - 동조또는 교체의 선택을 중지"
+#(ES) ESPAÑOL
+es-some-badwords-found: "[ Servidor ] Tu Mensage Contiene Malas Palabras!"
+es-badwords-nickname: "[ Servidor ] Tu Nickname Contiene Malas Palabras!!"
+es-be-careful-about-badwords: "[ Servidor ] Tenga en cuenta que nuestro filtro de malas palabras es muy sensible !)"
+es-doubt: "DUDA"
 
 # AND YOU CAN PROVIDE YOUR TRANSLATION       #
+# https://github.com/if-Team/PMMP-Plugins/tree/master/Gentleman/resources/messages.yml
