@@ -1,5 +1,5 @@
 name: "Gentleman"
-version: "1.0.0"
+version: "1.0.2"
 author: "Organization"
 main: "organization.gentleman.GentlemanPlugin"
 api: ["1.0.0"]

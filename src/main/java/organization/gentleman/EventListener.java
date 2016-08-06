@@ -8,7 +8,7 @@ import cn.nukkit.blockentity.BlockEntity;
 import cn.nukkit.blockentity.BlockEntitySign;
 import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.Listener;
-import cn.nukkit.event.TranslationContainer;
+import cn.nukkit.lang.TranslationContainer;
 import cn.nukkit.event.block.SignChangeEvent;
 import cn.nukkit.event.player.PlayerChatEvent;
 import cn.nukkit.event.player.PlayerCommandPreprocessEvent;
